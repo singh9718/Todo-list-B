@@ -9,6 +9,7 @@ function generateToken(user) {
   };
 
   const token = jwt.sign(payload, 'your-secret-key', { expiresIn: '1h' });
+  console.log(token);
   return token;
 }
 

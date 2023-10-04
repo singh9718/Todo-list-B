@@ -1,11 +1,11 @@
 // userController.js
 const User = require('../models/userModel');
 const bcrypt = require('bcryptjs');
-const { generateToken } = require('../utils/auth'); // Import your token generation utility
+const { generateToken } = require('../utils/auth');
 
 exports.login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, } = req.body;
 
     // Find the user by email
     const user = await User.findOne({ email });
@@ -25,9 +25,9 @@ exports.login = async (req, res) => {
 
     // If email and password are correct, generate a JWT token
     const token = generateToken(user);
-
+  
     // Send the token to the client
-    res.json({ token });
+    res.json({ message: 'Login successful', token });
   } catch (error) {
     // Handle errors (e.g., database errors)
     res.status(500).json({ error: 'Login failed' });
