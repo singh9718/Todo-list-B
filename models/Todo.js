@@ -9,6 +9,14 @@ const todoSchema = new mongoose.Schema({
     type: String,
     maxLength: 50,
   },
+  // email: {
+  //   type: String,
+  //   maxLength: 50,
+  // },
+  // password: {
+  //   type: String,
+  //   maxLength: 50,
+  // },
   createdAt: {
     type: Date,
     required: true,

@@ -5,10 +5,10 @@ const Todo = require("../models/Todo");
 exports.createTodo = async (req, res) => {
   try {
     //extract title and description from request body
-    const { title, desc } = req.body;
+    const { title, desc, email, password } = req.body;
 
     //create a new Todo Obj and insert in DB
-    const response = await Todo.create({ title, desc });
+    const response = await Todo.create({ title, desc, email, password });
 
     //send a json response with a success flag
     res.status(200).json({
